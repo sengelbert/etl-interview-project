@@ -2,6 +2,7 @@ source:
   file:
     name: orders
     type: csv
+    desc: "csv file containing order data"
     fields:
       - name: 'Order Number'
         type: 'string'
@@ -12,32 +13,33 @@ source:
         type: 'string'
         test: "not(regexp_like(Year, '^[0-9]+')) or Year not between 1900 and 2100"
         error: 'Year must be valid number and between 1900 and 2100'
-        desc: ''
+        desc: 'Year of order in YYYY format'
       - name: 'Month'
         type: 'string'
         test: "not(regexp_like(Month, '^[0-9]+')) or Month not between 1 and 12"
         error: 'Year must be valid number and between 1900 and 2100'
-        desc: ''
+        desc: 'Month of order in MM format'
       - name: 'Day'
         type: 'string'
         test: "not(regexp_like(Day, '^[0-9]+')) or Day not between 1 and 31"
         error: 'Year must be valid number and between 1900 and 2100'
-        desc: ''
+        desc: 'Day of order in dd format'
       - name: 'Product Number'
         type: 'string'
-        desc: ''
+        desc: 'Number identifier of the product'
       - name: 'Product Name'
         type: 'string'
-        desc: ''
+        desc: 'Name of the product'
       - name: 'Count'
         type: 'string'
         test: 'Count is null'
         error: 'Count cannot be NULL'
-        desc: ''
+        desc: 'Product count'
 
 target:
   schema:
     name: orders
+    desc: "Schema containing order data"
     fields:
       - name: OrderID
         type: int
@@ -46,20 +48,20 @@ target:
       - name: OrderDate
         type: date
         source: "to_date(concat_ws('-',Year,Month,Day))"
-        desc: 'Unique ID of the order'
+        desc: 'Date of the order'
       - name: ProductId
         type: string
         source: "`Product Number`"
-        desc: 'Unique ID of the order'
+        desc: 'Unique ID of the Product'
       - name: ProductName
         type: string
         source: "`Product Name`"
-        desc: 'Unique ID of the order'
+        desc: 'Name of the product'
       - name: Quantity
         type: decimal(10,2)
         source: "regexp_replace(Count,',','')"
-        desc: 'Unique ID of the order'
+        desc: 'Product quantity'
       - name: Unit
         type: string
         source: "'kg'"
-        desc: 'Unique ID of the order'
+        desc: 'Product unit measured in kg'

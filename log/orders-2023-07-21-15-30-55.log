@@ -1,38 +1,38 @@
 calling __init__() constructor for Sparky...
-23/07/21 11:26:19 INFO SparkContext: Running Spark version 3.4.1
-23/07/21 11:26:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-23/07/21 11:26:19 INFO ResourceUtils: ==============================================================
-23/07/21 11:26:19 INFO ResourceUtils: No custom resources configured for spark.driver.
-23/07/21 11:26:19 INFO ResourceUtils: ==============================================================
-23/07/21 11:26:19 INFO SparkContext: Submitted application: Spark App
-23/07/21 11:26:20 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
-23/07/21 11:26:20 INFO ResourceProfile: Limiting resource is cpu
-23/07/21 11:26:20 INFO ResourceProfileManager: Added ResourceProfile id: 0
-23/07/21 11:26:20 INFO SecurityManager: Changing view acls to: simon
-23/07/21 11:26:20 INFO SecurityManager: Changing modify acls to: simon
-23/07/21 11:26:20 INFO SecurityManager: Changing view acls groups to: 
-23/07/21 11:26:20 INFO SecurityManager: Changing modify acls groups to: 
-23/07/21 11:26:20 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: simon; groups with view permissions: EMPTY; users with modify permissions: simon; groups with modify permissions: EMPTY
-23/07/21 11:26:20 INFO Utils: Successfully started service 'sparkDriver' on port 39431.
-23/07/21 11:26:20 INFO SparkEnv: Registering MapOutputTracker
-23/07/21 11:26:20 INFO SparkEnv: Registering BlockManagerMaster
-23/07/21 11:26:20 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
-23/07/21 11:26:20 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
-23/07/21 11:26:20 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
-23/07/21 11:26:20 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2d8c620f-a122-4d7e-8e11-327b1c76d6df
-23/07/21 11:26:20 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
-23/07/21 11:26:20 INFO SparkEnv: Registering OutputCommitCoordinator
-23/07/21 11:26:20 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
-23/07/21 11:26:20 INFO Utils: Successfully started service 'SparkUI' on port 4040.
-23/07/21 11:26:20 INFO Executor: Starting executor ID driver on host fedora
-23/07/21 11:26:20 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
-23/07/21 11:26:20 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39791.
-23/07/21 11:26:20 INFO NettyBlockTransferService: Server created on fedora:39791
-23/07/21 11:26:20 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
-23/07/21 11:26:20 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, fedora, 39791, None)
-23/07/21 11:26:20 INFO BlockManagerMasterEndpoint: Registering block manager fedora:39791 with 434.4 MiB RAM, BlockManagerId(driver, fedora, 39791, None)
-23/07/21 11:26:20 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, fedora, 39791, None)
-23/07/21 11:26:20 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, fedora, 39791, None)
+23/07/21 15:30:57 INFO SparkContext: Running Spark version 3.4.1
+23/07/21 15:30:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+23/07/21 15:30:57 INFO ResourceUtils: ==============================================================
+23/07/21 15:30:57 INFO ResourceUtils: No custom resources configured for spark.driver.
+23/07/21 15:30:57 INFO ResourceUtils: ==============================================================
+23/07/21 15:30:57 INFO SparkContext: Submitted application: Spark App
+23/07/21 15:30:57 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+23/07/21 15:30:57 INFO ResourceProfile: Limiting resource is cpu
+23/07/21 15:30:57 INFO ResourceProfileManager: Added ResourceProfile id: 0
+23/07/21 15:30:57 INFO SecurityManager: Changing view acls to: simon
+23/07/21 15:30:57 INFO SecurityManager: Changing modify acls to: simon
+23/07/21 15:30:57 INFO SecurityManager: Changing view acls groups to: 
+23/07/21 15:30:57 INFO SecurityManager: Changing modify acls groups to: 
+23/07/21 15:30:57 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: simon; groups with view permissions: EMPTY; users with modify permissions: simon; groups with modify permissions: EMPTY
+23/07/21 15:30:58 INFO Utils: Successfully started service 'sparkDriver' on port 34275.
+23/07/21 15:30:58 INFO SparkEnv: Registering MapOutputTracker
+23/07/21 15:30:58 INFO SparkEnv: Registering BlockManagerMaster
+23/07/21 15:30:58 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/07/21 15:30:58 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/07/21 15:30:58 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+23/07/21 15:30:58 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-89a1dd4c-7fc4-462f-b733-1950d8f4f66a
+23/07/21 15:30:58 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+23/07/21 15:30:58 INFO SparkEnv: Registering OutputCommitCoordinator
+23/07/21 15:30:58 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+23/07/21 15:30:58 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/07/21 15:30:58 INFO Executor: Starting executor ID driver on host fedora
+23/07/21 15:30:58 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+23/07/21 15:30:58 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34527.
+23/07/21 15:30:58 INFO NettyBlockTransferService: Server created on fedora:34527
+23/07/21 15:30:58 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/07/21 15:30:58 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, fedora, 34527, None)
+23/07/21 15:30:58 INFO BlockManagerMasterEndpoint: Registering block manager fedora:34527 with 434.4 MiB RAM, BlockManagerId(driver, fedora, 34527, None)
+23/07/21 15:30:58 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, fedora, 34527, None)
+23/07/21 15:30:58 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, fedora, 34527, None)
 Reading definition.yaml...
 Collecting Source Columns and Data Types from definition.yaml...
 Input dataframe count: 12
@@ -48,14 +48,6 @@ root
 
 Reading definition.yaml...
 Collecting Data Quality Tests from definition.yaml...
-Base Query:
-select `Order Number`,
-	`Year`,
-	`Month`,
-	`Day`,
-	`Product Number`,
-	`Product Name`,
-	`Count`
 query:
 select `Order Number`,
 	`Year`,
@@ -63,7 +55,10 @@ select `Order Number`,
 	`Day`,
 	`Product Number`,
 	`Product Name`,
-	`Count`, null as error from source_df limit 0
+	`Count`
+	, null as error 
+from source_df 
+limit 0
 root
  |-- Order Number: string (nullable = true)
  |-- Year: string (nullable = true)
@@ -242,24 +237,6 @@ root
 |        1010|2017|   12| 19|       P-10010|      Potato|    null|Count: Count cann...|
 +------------+----+-----+---+--------------+------------+--------+--------------------+
 
-root
- |-- Order Number: string (nullable = true)
- |-- Year: string (nullable = true)
- |-- Month: string (nullable = true)
- |-- Day: string (nullable = true)
- |-- Product Number: string (nullable = true)
- |-- Product Name: string (nullable = true)
- |-- Count: string (nullable = true)
- |-- error: string (nullable = true)
-
-+------------+----+-----+---+--------------+------------+--------+--------------------+
-|Order Number|Year|Month|Day|Product Number|Product Name|   Count|               error|
-+------------+----+-----+---+--------------+------------+--------+--------------------+
-|         abc|2018|    1| 16|       P-10011|      Tomato|8,678.50|Order Number: Ord...|
-|        1012|1111|   12| 11|       P-10012|        Beet|    1.00|Year: Year must b...|
-|        1010|2017|   12| 19|       P-10010|      Potato|    null|Count: Count cann...|
-+------------+----+-----+---+--------------+------------+--------+--------------------+
-
 query:
 select `Order Number`,
 	`Year`,
@@ -287,40 +264,9 @@ root
  |-- Product Name: string (nullable = true)
  |-- Count: string (nullable = true)
 
-root
- |-- Order Number: string (nullable = true)
- |-- Year: string (nullable = true)
- |-- Month: string (nullable = true)
- |-- Day: string (nullable = true)
- |-- Product Number: string (nullable = true)
- |-- Product Name: string (nullable = true)
- |-- Count: string (nullable = true)
-
-+------------+----+-----+---+--------------+---------------+------------+
-|Order Number|Year|Month|Day|Product Number|   Product Name|       Count|
-+------------+----+-----+---+--------------+---------------+------------+
-|        1001|2017|   12| 12|       P-10002|Iceberg lettuce|      500.00|
-|        1005|2018|    6|  1|       P-10005|         Carrot|       50.50|
-|        1006|2017|   12|  1|       P-10006|       Jalapeno|       52.23|
-|        1009|2018|   11|  8|       P-10009|          Onion|    5,125.40|
-|        1000|2018|    1|  1|       P-10001|        Arugola|1,115,250.50|
-|        1004|2017|    1| 12|       P-10004|           Kale|     5650.00|
-|        1007|2018|   10| 15|       P-10007|         Radish|   20,250.50|
-|        1003|2018|    5| 30|       P-10003|Romaine lettuce|    5,250.50|
-|        1008|2017|    2| 12|       P-10008|       Cucumber|      123.45|
-+------------+----+-----+---+--------------+---------------+------------+
-
 Reading definition.yaml...
 Collecting Target Columns and Data Types from definition.yaml...
 Creating source to target query...
-SQL Query:
-select cast(`Order Number` as int) as OrderID,
-	cast(to_date(concat_ws('-',Year,Month,Day)) as date) as OrderDate,
-	cast(`Product Number` as string) as ProductId,
-	cast(`Product Name` as string) as ProductName,
-	cast(regexp_replace(Count,',','') as decimal(10,2)) as Quantity,
-	cast('kg' as string) as Unit
-from source_df
 query:
 select cast(`Order Number` as int) as OrderID,
 	cast(to_date(concat_ws('-',Year,Month,Day)) as date) as OrderDate,

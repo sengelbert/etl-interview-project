@@ -20,7 +20,7 @@ class Sparky:
     def read_yaml(self, file):
         """Function reads a YAML config file into a dictionary.
 
-        :param file: The path and filename for YAML file
+        :param file: The path and filename for the YAML file
         :type file: str
         :returns: The config dictionary
         :rtype: dict
@@ -35,7 +35,7 @@ class Sparky:
     def create_source_schema(self, file):
         """Function creates a Spark schema based on a YAML config file.
 
-        :param file: The path and filename for YAML file
+        :param file: The path and filename for the YAML file
         :type file: str
         :returns: Spark Schema
         :rtype: pyspark.sql.types.StructType
@@ -64,7 +64,7 @@ class Sparky:
     def create_target_query(self, file):
         """Function creates a SparkSQL query based on logic from a YAML config file.
 
-        :param file: The path and filename for YAML file
+        :param file: The path and filename for the YAML file
         :type file: str
         :returns: SparkSQL query
         :rtype: str
@@ -80,7 +80,7 @@ class Sparky:
         query = "select "
         query += ',\n\t'.join(sql_columns)
         query += "\nfrom source_df"
-        print(f"SQL Query:\n{query}")
+        # print(f"SQL Query:\n{query}")
 
         return query
 
@@ -93,9 +93,9 @@ class Sparky:
         :type schema: pyspark.sql.types.StructType
         :param header: Flag to process the first row of file as a header or data
         :type header: boolean
-        :param sep: The delimiter character
+        :param sep: The delimiter character for delimited file
         :type sep: str
-        :param quote: The quote character used to enclose fields
+        :param quote: The quote character used to enclose fields within a delimited file
         :type quote: str
         :returns: Spark DataFrame
         :rtype: pyspark.sql.DataFrame
@@ -134,7 +134,7 @@ class Sparky:
 
         :param df: The Spark DataFrame to execute the query against
         :type df: Spark DataFrame
-        :param file: The path and filename for YAML file
+        :param file: The path and filename for the YAML file
         :type file: str
         :returns: Spark DataFrame
         :rtype: pyspark.sql.DataFrame
@@ -143,7 +143,6 @@ class Sparky:
         """
 
         sql_columns = []
-        df.createOrReplaceTempView("source_df")
         definition = self.read_yaml(file)
         print(f"Collecting Data Quality Tests from {file}...")
         for column in definition['source']['file']['fields']:
@@ -152,9 +151,8 @@ class Sparky:
         base_query = "select "
         base_query += ',\n\t'.join(sql_columns)
 
-        print("Base Query:")
-        print(base_query)
-        bad_df = self.run_query(base_query + ", null as error from source_df limit 0", df)
+        df.createOrReplaceTempView("source_df")
+        bad_df = self.run_query(base_query + "\n\t, null as error \nfrom source_df \nlimit 0", df)
         # TODO Make this cleaner
         for column in definition['source']['file']['fields']:
             query = base_query
@@ -166,19 +164,19 @@ class Sparky:
                 bad_df.show()
 
         bad_df.createOrReplaceTempView("bad_df")
-        bad_df.printSchema()
-        bad_df.show()
+        # bad_df.printSchema()
+        # bad_df.show()
 
         minus_query = f"{base_query}\nfrom source_df\nminus\n{base_query}\nfrom bad_df"
 
         good_df = self.run_query(minus_query, df)
-        good_df.printSchema()
-        good_df.show()
+        # good_df.printSchema()
+        # good_df.show()
 
         return good_df, bad_df
 
     # def parse_schema(self, file, object):
-    #     # TODO do this once
+    #     # TODO do this once, not in each function
     #     columns = []
     #     definition = self.read_yaml(file)
     #     print(f"Collecting Schema Columns and Data Types from {file}...")
@@ -188,5 +186,5 @@ class Sparky:
         # TODO Where ever we want the dataframes to go
 
     # def create_docs(self, file):
-        # TODO What ever docs we can create from the configs
+        # TODO What ever docs we can create from the configs... but probably not here in this file
 
