@@ -1,0 +1,65 @@
+source:
+  file:
+    name: orders
+    type: csv
+    fields:
+      - name: 'Order Number'
+        type: 'string'
+        test: "not(regexp_like(`Order Number`, '^[0-9]+'))"
+        error: 'Order Number must be a valid number'
+        desc: 'Unique number of the order'
+      - name: 'Year'
+        type: 'string'
+        test: "not(regexp_like(Year, '^[0-9]+')) or Year not between 1900 and 2100"
+        error: 'Year must be valid number and between 1900 and 2100'
+        desc: ''
+      - name: 'Month'
+        type: 'string'
+        test: "not(regexp_like(Month, '^[0-9]+')) or Month not between 1 and 12"
+        error: 'Year must be valid number and between 1900 and 2100'
+        desc: ''
+      - name: 'Day'
+        type: 'string'
+        test: "not(regexp_like(Day, '^[0-9]+')) or Day not between 1 and 31"
+        error: 'Year must be valid number and between 1900 and 2100'
+        desc: ''
+      - name: 'Product Number'
+        type: 'string'
+        desc: ''
+      - name: 'Product Name'
+        type: 'string'
+        desc: ''
+      - name: 'Count'
+        type: 'string'
+        test: 'Count is null'
+        error: 'Count cannot be NULL'
+        desc: ''
+
+target:
+  schema:
+    name: orders
+    fields:
+      - name: OrderID
+        type: int
+        source: "`Order Number`"
+        desc: 'Unique ID of the order'
+      - name: OrderDate
+        type: date
+        source: "to_date(concat_ws('-',Year,Month,Day))"
+        desc: 'Unique ID of the order'
+      - name: ProductId
+        type: string
+        source: "`Product Number`"
+        desc: 'Unique ID of the order'
+      - name: ProductName
+        type: string
+        source: "`Product Name`"
+        desc: 'Unique ID of the order'
+      - name: Quantity
+        type: decimal(10,2)
+        source: "regexp_replace(Count,',','')"
+        desc: 'Unique ID of the order'
+      - name: Unit
+        type: string
+        source: "'kg'"
+        desc: 'Unique ID of the order'

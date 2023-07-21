@@ -1,0 +1,13 @@
+Order Number,Year,Month,Day,Product Number,Product Name,Count,Extra Col1,Extra Col2,Empty Column
+1000,2018,1,1,P-10001,Arugola,"1,115,250.50",Lorem,Ipsum,
+1001,2017,12,12,P-10002,Iceberg lettuce,500.00,Lorem,Ipsum,
+1003,2018,5,30,P-10003,Romaine lettuce,"5,250.50",Lorem,Ipsum,
+1004,2017,1,12,P-10004,Kale,5650.00,Lorem,Ipsum,
+1005,2018,6,1,P-10005,Carrot,"50.50",Lorem,Ipsum,
+1006,2017,12,1,P-10006,Jalapeno,52.23,Lorem,Ipsum,
+1007,2018,10,15,P-10007,Radish,"20,250.50",Lorem,Ipsum,
+1008,2017,2,12,P-10008,Cucumber,123.45,Lorem,Ipsum,
+1009,2018,11,8,P-10009,Onion,"5,125.40",Lorem,Ipsum,
+1010,2017,12,19,P-10010,Potato,,Lorem,Ipsum,
+abc,2018,1,16,P-10011,Tomato,"8,678.50",Lorem,Ipsum,
+1012,1111,12,11,P-10012,Beet,1.00,Lorem,Ipsum,
